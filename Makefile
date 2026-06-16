@@ -3,7 +3,7 @@
 CXX = clang++
 CXXFLAGS = -std=c++17 -g -I./stb $(shell pkg-config --cflags glfw3) -I /mnt/Code/libs
 LDFLAGS = $(shell pkg-config --libs glfw3)
-TARGET = output/e
+TARGET = output/a.out
 SOURCES = main.cpp glad.c
 
 all: $(TARGET)
@@ -16,17 +16,17 @@ clean:
 	rm -f $(TARGET)
 
 run:
-	./output/e
+	./output/a.out
 
 rund:
-	./output/e d
+	./output/a.out d
 
 # |-- WINDOWS --------------------------------------------------------------------------|
 
 CXXw = clang++
 CXXFLAGSw = -std=c++17 -g -I C:\Code\GLFW\include -I C:\Code\GLAD\include -I C:\Code\GLM
 LDFLAGSw = -L C:\Code\GLFW\lib-vc2022 -lglfw3 -lopengl32 -luser32 -lgdi32 -lshell32
-TARGETw = output\ew.exe
+TARGETw = output\a.exe
 SOURCESw = main.cpp glad.c
 
 allw: $(TARGETw)
@@ -38,7 +38,7 @@ cleanw:
 	del $(TARGETw)
 
 runw:
-	output/ew.exe
+	output/a.exe
 
 rundw:
-	output/ew.exe d
+	output/a.exe d
